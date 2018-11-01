@@ -4,5 +4,5 @@
 var Program = function () {
 
     this.canvas = new Canvas();
-    this.result = new SVGCanvas();
+    this.resultCanvas = new SVGCanvas();
 };

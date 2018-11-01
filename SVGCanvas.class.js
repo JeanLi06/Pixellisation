@@ -1,17 +1,15 @@
 "use strict";
 
 var SVGCanvas = function() {
-    var square = '<circle cx="50" cy="30" r="100" fill="red" opacity=".8" />'; //A remplacer par DisplaySquare
-    $('.svgResult').wrapInner(square);
+    var square = this.drawSquareIntoSVG(20, 20, 100, 'red');
+    document.getElementById("resultCanvas").innerHTML = '<circle cx="50" cy="30" r="100" fill="red" opacity=".8" />';
+    // $('#resultCanvas').wrapInner(this.square);
+    // var target = document.getElementById('resultCanvas');
+    // $('svg').wrapInner(square);
 };
 
-SVGCanvas.prototype.drawSquare = function(color, originX, originY) { //on dessine un carré dans le canvas
-    var square = this.ctx.createImageData(PIXELSIZE, PIXELSIZE);
-    //on dessine un carré de coté PIXELSIZE aux coordonnées x, y
-    for (var index = 0; index < PIXELSIZE* PIXELSIZE; index++){
-        square.data[index] = color;
-    }
-    this.ctx.putImageData(square, originX, originY);
+SVGCanvas.prototype.drawSquareIntoSVG = function (originX, originY, size, color) {
+    return ('<rect   x="' + originX  + '"  y="' +  originY + '"  width="' + size + '"  height="' + size + '"  fill="' + color + '" opacity="0.7"' +  " />");
 };
 
 // calcule la valeur moyenne d'un carré de coté donné, au coordonnées meanSquareX, meanSquareY

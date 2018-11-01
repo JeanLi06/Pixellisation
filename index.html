@@ -5,17 +5,18 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pixellisation Canvas</title>
-    <script
-            src="https://code.jquery.com/jquery-3.3.1.min.js"
-            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin="anonymous">
-    </script>
-
-    <!--<script src="Canvas.class.js"></script>-->
-    <script src="script.js"></script>
+    <!--<script-->
+            <!--src="https://code.jquery.com/jquery-3.3.1.min.js"-->
+            <!--integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="-->
+            <!--crossorigin="anonymous">-->
+    <!--</script>-->
+    <!-- Librairie jQuery -->
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!--<script src="jquery-3.3.1.min.js"></script>-->
     <script src="Program.class.js"></script>
     <script src="Canvas.class.js"></script>
     <script src="SVGCanvas.class.js"></script>
+    <!--<script src="DrawSquareIntoSVG.js"></script>-->
     <!--<script src="test.js"></script>-->
 </head>
 <body>
@@ -24,9 +25,10 @@
     Votre navigateur n'est pas assez récent pour afficher le canvas
 </canvas>
 <!--<h2>Résultat</h2>-->
-<svg id="result" width="600" height="300" style="border: 1px solid red" class="svgResult">
+<svg id="resultCanvas" width="600" height="300" style="border: 1px solid red" class="svgResult">
+
 </svg>
 
-
+<script src="script.js"></script>
 </body>
 </html>

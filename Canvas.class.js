@@ -1,4 +1,5 @@
 "use strict";
+
 const PIXELSIZE = 5; //pixellisation par carré de 5x5
 
 var Canvas = function() {
@@ -17,5 +18,3 @@ Canvas.prototype.imageLoad = function(image, ctx) {
     };
     image.src = 'la-joconde.jpg';
 };
-
-
