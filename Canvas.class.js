@@ -1,6 +1,8 @@
 "use strict";
 
-const PIXELSIZE = 5; //pixellisation par carré de 5x5
+const PIXELSIZE = 50; //pixellisation par carré de 5x5
+const CANVAS_WIDTH = 600;
+const CANVAS_HEIGHT = 600;
 
 var Canvas = function() {
 
