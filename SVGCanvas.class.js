@@ -1,11 +1,8 @@
 "use strict";
 
 var SVGCanvas = function() {
-    var square = this.drawSquareIntoSVG(20, 20, 100, 'red');
-    document.getElementById("resultCanvas").innerHTML = '<circle cx="50" cy="30" r="100" fill="red" opacity=".8" />';
-    // $('#resultCanvas').wrapInner(this.square);
-    // var target = document.getElementById('resultCanvas');
-    // $('svg').wrapInner(square);
+    this.square = this.drawSquareIntoSVG(20, 20, 100, 'red');
+    document.getElementById("resultCanvas").innerHTML = this.square;
 };
 
 SVGCanvas.prototype.drawSquareIntoSVG = function (originX, originY, size, color) {
