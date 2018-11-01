@@ -3,7 +3,8 @@
 
 var Program = function () {
 
+    // this.svgCanvas = new SVGCanvas(this.canvas.ctx);
     this.canvas = new Canvas();
-    this.resultCanvas = new SVGCanvas();
-    // this.resultCanvas.meanColorOfSquare(10,10);
+    this.svgCanvas = new SVGCanvas(this.canvas);
+    this.svgCanvas.meanColorOfSquare(10,10);
 };
