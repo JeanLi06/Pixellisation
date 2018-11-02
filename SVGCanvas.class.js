@@ -2,8 +2,8 @@
 
 var SVGCanvas = function(canvas) {//besoin de canvas pour accéder au contexte 2D
 
-    this.ctx = canvas.ctx;
-    console.log(this.ctx);
+    // this.ctx = canvas.ctx;
+    this.ctx = canvas.getCanvasCtx();
     //tableau qui va contenir tous les carrés du SVG
     this.contentSVGs=[];
     //on balaye tout le canvas, avec un pas de largeur PIXELSIZE
@@ -31,7 +31,8 @@ SVGCanvas.prototype.meanColorOfSquare = function (currentX, currentY) {
         blue: 0
     };
     for (var offset = 0; offset < PIXELSIZE * PIXELSIZE; offset++){ //incrément des 4 paramètres de imageData
-        pixel       =  this.ctx.getImageData(offset + currentX, offset + currentY, 1, 1);  //************* REVOIR CE CODE ****************
+        pixel       =  this.ctx.getImageData(offset + currentX, offset + currentY, 1, 1);
+
         //datas sommes cumulées des couleurs du point currentX, currentY
         data        = pixel.data;
         rgba.red   += data[0]; /*somme couleur du pixel couleur rouge*/
