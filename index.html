@@ -10,12 +10,11 @@
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous">
     </script>
-    <!-- Librairie jQuery -->
-    <!--<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>-->
-    <!--<script src="jquery-3.3.1.min.js"></script>-->
-    <!--<script src="js/pixi.min.js"></script>-->
-    <!--<script src="js/Canvas.class.js"></script>-->
-    <script src="js/Program.class.js"></script>
+    <!--Librairie SVG-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.6/svg.js"></script>
+
+    <script src="js/SVGCanvas.class.js"></script>
+    <script src="js/Canvas.class.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -25,8 +24,7 @@
 <div class="video-container">
     <canvas id="canvas" class="video"></canvas>
 </div>
-<svg id="resultCanvas" width="600" height="600" style="border: 1px solid red" class="svgResult">
-</svg>
+<div id="resultCanvas"></div>
 
 <script src="js/script.js"></script>
 </body>
