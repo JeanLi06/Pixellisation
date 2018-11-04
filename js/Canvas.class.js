@@ -40,5 +40,5 @@ Canvas.prototype.getCanvasHeight = function () {
 };
 
 Canvas.prototype.getPixelData = function (coordX, coordY) {
-    return this.context.getImageData(coordX, coordY, PIXELSIZE, PIXELSIZE)
+    return this.context.getImageData(coordX, coordY, 1, 1)
 };

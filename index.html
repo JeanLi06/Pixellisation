@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pixellisation Canvas</title>
     <script
@@ -10,24 +11,22 @@
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous">
     </script>
-    <!--Librairie SVG-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.6/svg.js"></script>
-
-    <!--Librairie P5.js-->
-    <!--<script src="https://cdnjs.cloudflare./com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>-->
-
-    <script src="js/SVGCanvas.class.js"></script>
     <script src="js/Canvas.class.js"></script>
+    <script src="js/SVGCanvas.class.js"></script>
     <link rel="stylesheet" href="css/style.css">
+    <!--<script src="DrawSquareIntoSVG.js"></script>-->
+    <!--<script src="test.js"></script>-->
 </head>
 <body>
 <h1>Pixellisation</h1>
 <img id="SourceImage" src="img/la-joconde.jpg" class="hidden">
+<canvas id="canvas" width="882" height="587" style="border: 1px solid black">
+    Votre navigateur n'est pas assez récent pour afficher le canvas
+</canvas>
+<!--<h2>Résultat</h2>-->
+<svg id="resultCanvas" width="882" height="587" style="border: 1px solid red" class="svgResult">
 
-<div class="video-container">
-    <canvas id="canvas" class="video"></canvas>
-</div>
-<div id="resultCanvas"></div>
+</svg>
 
 <script src="js/script.js"></script>
 </body>
