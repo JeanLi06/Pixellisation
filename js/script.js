@@ -1,8 +1,8 @@
 "use strict";
 
-   $(function () {
-       // var PIXELSIZE = 5; //pixellisation par carré de PxP
+var PIXELSIZE = 50; //pixellisation par carré de PxP
+$(function () {
        this.canvas = new Canvas();
-       var SVG = new SVGCanvas(this.canvas);
-   });
+       this.SVG = new SVGCanvas(this.canvas);
+});
 

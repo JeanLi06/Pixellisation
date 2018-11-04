@@ -1,8 +1,6 @@
 "use strict";
 
 var Canvas = function () {
-    this.PIXELSIZE = 5; //pixellisation par carré de PxP
-
     this.image = document.getElementById('SourceImage');
     this.canvas = document.getElementById('canvas');
     this.context = this.canvas.getContext('2d');
@@ -22,7 +20,7 @@ Canvas.prototype.drawTheImage = function() {
     this.canvas.height = this.image.height;
     this.context.drawImage(this.image, 0, 0);
     // Get the canvas image data
-    this.imageData = this.context.getImageData(0, 0, this.PIXELSIZE, this.PIXELSIZE);
+    this.imageData = this.context.getImageData(0, 0, PIXELSIZE, PIXELSIZE);
 };
 
 Canvas.prototype.setCanvasWidth = function (width) {
@@ -42,5 +40,5 @@ Canvas.prototype.getCanvasHeight = function () {
 };
 
 Canvas.prototype.getPixelData = function (coordX, coordY) {
-    return this.context.getImageData(coordX, coordY, this.PIXELSIZE, this.PIXELSIZE)
+    return this.context.getImageData(coordX, coordY, PIXELSIZE, PIXELSIZE)
 };
