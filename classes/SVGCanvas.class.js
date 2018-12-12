@@ -3,7 +3,7 @@
 var SVGCanvas = function (canvas) {//besoin de canvas pour accéder au contexte 2D
     // Composition de la classe Canvas
     this.canvas  = canvas;
-    this.context = this.canvas.context;
+    this.context = this.canvas.pixelizedContext;
 
     //tableau qui va contenir tous les carrés du SVG
     this.contentSVGs = [];
@@ -12,10 +12,10 @@ var SVGCanvas = function (canvas) {//besoin de canvas pour accéder au contexte 
 };
 
 SVGCanvas.prototype.drawSVGCanvas = function() {
-    //on balaye tout le canvas, avec un pas de largeur PIXELSIZE
-    for (var x = 0; x < this.canvas.getCanvasWidth(); x = x + PIXELSIZE) {
-        for (var y = 0; y < this.canvas.getCanvasHeight(); y = y + PIXELSIZE) {
-            this.square = this.drawSquareIntoSVG(x, y, PIXELSIZE, this.meanColorOfSquare(x, y));
+    //on balaye tout le canvas, avec un pas de largeur pixelsize
+    for (var x = 0; x < Math.round(this.canvas.getCanvasWidth() / pixelsize) * pixelsize-pixelsize; x += pixelsize) {
+        for (var y = 0; y < Math.round(this.canvas.getCanvasHeight()  / pixelsize) * pixelsize; y += pixelsize) {
+            this.square = this.drawSquareIntoSVG(x, y, pixelsize, this.meanColorOfSquare(x, y));
             this.contentSVGs.push(this.square);
         }
     }
@@ -25,12 +25,11 @@ SVGCanvas.prototype.drawSVGCanvas = function() {
 
 // Dessine un carré SVG
 SVGCanvas.prototype.drawSquareIntoSVG = function (originX, originY, size, color) {
-    return ('<rect   x="' + originX + '"  y="' + originY + '"  width="' + size + '"  height="' + size + '"  fill="' + color + '" border="none"' + " />");
+    return ('<rect   x="' + originX + '"  y="' + originY + '"  width="' + size + '"  height="' + size + '"  fill="' + color + '" stroke-width="0"' + " />");
 };
 
 // retourne la valeur moyenne d'un carré de coté donné, aux coordonnées meanSquareX, meanSquareY
 SVGCanvas.prototype.meanColorOfSquare = function (currentX, currentY) {
-    this.PIXELSQUARE = PIXELSIZE * PIXELSIZE;
     var pixel;
     var data;
     this.rgba = { //on n'utilise pas le alpha
@@ -38,27 +37,24 @@ SVGCanvas.prototype.meanColorOfSquare = function (currentX, currentY) {
         green: 0,
         blue:  0
     };
-
-    for (var offset = 0; offset < PIXELSIZE * PIXELSIZE; offset++) { //incrément des 4 paramètres de imageData
+    for (var offset = 0; offset < pixelsize * pixelsize; ++offset) { //incrément des 4 paramètres de imageData
         pixel = this.canvas.getPixelData(offset + currentX, offset + currentY, 1, 1);
-
         //datas sommes cumulées des couleurs du point currentX, currentY
         data = pixel.data;
-        this.rgba.red   += data[0];
         /*somme couleur du pixel couleur rouge*/
-        this.rgba.green += data[1]; //effet spécial en modifiant + => *
-        /* somme couleur du pixel couleur rouge*/
+        this.rgba.red   += data[0];
+        /*somme couleur du pixel couleur vert*/
+        this.rgba.green += data[1];
+        /*somme couleur du pixel couleur bleu*/
         this.rgba.blue  += data[2];
-        /* somme couleur du pixel couleur rouge*/
     }
     //on calcule les moyennes
-    this.rgba.red   /= PIXELSIZE;
-    this.rgba.green /= PIXELSIZE;
-    this.rgba.blue  /= PIXELSIZE;
-
-    this.rgba.red   = parseInt(this.rgba.red   / 5);
-    this.rgba.green = parseInt(this.rgba.green / 5);
-    this.rgba.blue  = parseInt(this.rgba.blue  / 5);
+    this.rgba.red   /= pixelsize;
+    this.rgba.green /= pixelsize;
+    this.rgba.blue  /= pixelsize;
+    this.rgba.red   = parseInt(this.rgba.red   / pixelsize);
+    this.rgba.green = parseInt(this.rgba.green / pixelsize);
+    this.rgba.blue  = parseInt(this.rgba.blue  / pixelsize);
 
     return (this.convertRgbToHex(this.rgba.red, this.rgba.green, this.rgba.blue));
 };

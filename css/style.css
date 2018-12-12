@@ -10,3 +10,37 @@
 .hidden {
     display: none;
 }
+
+#slider{
+    width: 350px;
+    margin-bottom: 10px;
+}
+
+h1{
+    flex-basis: 100%;
+    text-align: center;
+}
+
+.flexbox{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+#custom-handle {
+background: gold;
+border: 2px #85741E solid;
+width: 2em;
+height: 1.2em;
+font-size: 0.8em;
+top: 50%;
+margin-top: -0.5em;
+padding-bottom: 1.1em;
+text-align: center;
+line-height: 1em;
+}
+
+#canvas{
+border: 10px gold ridge;
+}
+

@@ -11,23 +11,32 @@
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous">
     </script>
-    <script src="js/Canvas.class.js"></script>
-    <script src="js/SVGCanvas.class.js"></script>
+    <!--Chargement de jQuery UI-->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <script src="classes/Canvas.class.js"></script>
+    <script src="classes/PixelizedCanvas.class.js"></script>
+    <script src="js/jcanvas.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
-    <!--<script src="DrawSquareIntoSVG.js"></script>-->
-    <!--<script src="test.js"></script>-->
 </head>
 <body>
+
 <h1>Pixellisation</h1>
-<img id="SourceImage" src="img/la-joconde.jpg" class="hidden">
-<canvas id="canvas" width="882" height="587" style="border: 1px solid black">
-    Votre navigateur n'est pas assez récent pour afficher le canvas
-</canvas>
-<!--<h2>Résultat</h2>-->
-<svg id="resultCanvas" width="882" height="587" style="border: 1px solid red" class="svgResult">
-
-</svg>
-
+<div class="flexbox">
+    <img id="sourceImage" src="img/la-joconde_petite.jpg" class="hidden">
+    <canvas id="canvas" width="" height="" class="hidden">
+        Votre navigateur n'est pas assez récent pour afficher le canvas
+    </canvas>
+    <div>
+        <div id="slider">
+            <div id="custom-handle" class="ui-slider-handle"></div>
+        </div>
+        <canvas id="pixelizedCanvas" width="" height="" class="hidden">
+            Votre navigateur n'est pas assez récent pour afficher le canvas
+        </canvas>
+    </div>
+</div>
 <script src="js/script.js"></script>
 </body>
 </html>
