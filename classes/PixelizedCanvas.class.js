@@ -4,30 +4,11 @@ var PixelizedCanvas = function (canvas) {
     // Composition de la classe Canvas
     this.canvas = canvas;
     this.context = this.canvas.context;
-
     this.canvasResult = document.getElementById('pixelizedCanvas');
     this.pixelizedContext = this.canvasResult.getContext('2d');
 
     this.drawPixelizedCanvas();
-
-    //ajout de l'écouteur d'évènement
-    document.getElementById('slider').addEventListener('mouseup', function () {
-        // $('#slider').on('mouseup', function (){
-        //on redessine
-        this.drawPixelizedCanvas();
-    }.bind(this));
-
-    // this.eventSliderChange();
     this.sliderPixel();
-};
-
-//gestion du changement du slider
-PixelizedCanvas.prototype.eventSliderChange = function () {
-    document.getElementById('slider').addEventListener('mouseup', function () {
-        // $('#slider').on('mouseup', function (){
-        //on redessine
-        this.drawPixelizedCanvas();
-    })
 };
 
 PixelizedCanvas.prototype.drawSquare = function (xCoord, yCoord, color) { //dessine aux coordonnées x,y un carré de taille pixelsize
@@ -72,9 +53,9 @@ PixelizedCanvas.prototype.drawPixelizedCanvas = function () {
 PixelizedCanvas.prototype.sliderPixel = function () {
     var handle = $("#custom-handle");
     $("#slider").slider({
-        step: 5,
-        min: 5,
-        max: 20,
+        step: 2,
+        min: 4,
+        max: 42,
         // change: redrawPixelizedCanvas,
         create: function () {
             handle.text($(this).slider("value"));
@@ -82,7 +63,9 @@ PixelizedCanvas.prototype.sliderPixel = function () {
         // Si changement, on change les valeurs et on redessine
         slide: function (event, ui) {
             handle.text(ui.value);
-        },
+            pixelsize = ui.value;
+            this.drawPixelizedCanvas();
+        }.bind(this),
         stop: function (event, ui) {
             pixelsize = ui.value;
         }

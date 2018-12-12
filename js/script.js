@@ -1,6 +1,6 @@
 "use strict";
 
-var pixelsize = 5; //pixellisation par carré de PxP
+var pixelsize = 4; //pixellisation initiale par carré de PxP
 
 //on attend que le DOM soit chargé avant de lancer le programme
 $(function () {

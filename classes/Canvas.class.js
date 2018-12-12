@@ -14,7 +14,7 @@ var Canvas = function () {
     this.drawTheImage();
 
     //on affiche les canvas
-    $("canvas").toggle();
+    $("h1>div").toggle();
 };
 
 //affiche l'image dans le canvas

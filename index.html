@@ -23,16 +23,17 @@
 <body>
 
 <h1>Pixellisation</h1>
-<div class="flexbox">
+<div class="flexbox hidden" >
     <img id="sourceImage" src="img/la-joconde_petite.jpg" class="hidden">
-    <canvas id="canvas" width="" height="" class="hidden">
+    <canvas id="canvas" width="" height="">
         Votre navigateur n'est pas assez récent pour afficher le canvas
     </canvas>
-    <div>
+    <div id="pixelizedContainer">
+        <p>Taille du carré de pixellisation</p>
         <div id="slider">
             <div id="custom-handle" class="ui-slider-handle"></div>
         </div>
-        <canvas id="pixelizedCanvas" width="" height="" class="hidden">
+        <canvas id="pixelizedCanvas" width="" height="">
             Votre navigateur n'est pas assez récent pour afficher le canvas
         </canvas>
     </div>
