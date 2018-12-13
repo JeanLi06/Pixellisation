@@ -11,8 +11,9 @@ var PixelizedCanvas = function (canvas) {
     this.sliderPixel();
 };
 
-PixelizedCanvas.prototype.drawSquare = function (xCoord, yCoord, color) { //dessine aux coordonnées x,y un carré de taille pixelsize
-    $(this.canvasResult).drawRect({                               // (0 = coin supérieur gauche)
+//dessine aux coordonnées x,y un carré de taille pixelsize (0 = coin supérieur gauche)
+PixelizedCanvas.prototype.drawSquare = function (xCoord, yCoord, color) {
+    $(this.canvasResult).drawRect({
         fillStyle: color,
         x: xCoord, y: yCoord,
         width: pixelsize,
@@ -21,7 +22,7 @@ PixelizedCanvas.prototype.drawSquare = function (xCoord, yCoord, color) { //dess
     });
 };
 
-//Copie de la méthode de SVGCanvas TODO: à modifier d'emplacement
+//Conversion d'une couleur rgb en hexa
 PixelizedCanvas.prototype.convertRgbToHex = function (r, g, b) {
     this.rHex = r.toString(16);
     this.gHex = g.toString(16);
@@ -36,6 +37,7 @@ PixelizedCanvas.prototype.convertRgbToHex = function (r, g, b) {
     return '#' + this.rHex + this.gHex + this.bHex;
 };
 
+//Affiche le canvas pixelisé
 PixelizedCanvas.prototype.drawPixelizedCanvas = function () {
     //on balaye tout le canvas, avec un pas de largeur pixelsize
     var colorObject, color;
