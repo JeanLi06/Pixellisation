@@ -22,15 +22,15 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <div class="flexbox hidden">
+        <div class="center">
             <h1>Pixellisation</h1>
             <img id="sourceImage" src="img/la-joconde_petite.jpg" class="hidden" alt="La Joconde">
             <canvas id="canvas">
                 Votre navigateur n'est pas assez récent pour afficher le canvas
             </canvas>
             <div id="pixelizedContainer">
-                <p>Taille du carré de pixellisation</p>
-                <div id="slider">
+                <p id="titreCanvasPixelized">Taille du carré de pixellisation</p>
+                <div id="slider" class="center">
                     <div id="custom-handle" class="ui-slider-handle"></div>
                 </div>
                 <canvas id="pixelizedCanvas">
