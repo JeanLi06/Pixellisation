@@ -70,5 +70,6 @@ PixelizedCanvas.prototype.sliderPixel = function () {
         stop: function (event, ui) {
             pixelSize = ui.value;
         }
-    });
+    })
+    ;
 };
