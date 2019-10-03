@@ -1,43 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport"
-              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Pixellisation Canvas</title>
-        <script
-                src="https://code.jquery.com/jquery-3.3.1.min.js"
-                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-                crossorigin="anonymous">
-        </script>
-        <!--Chargement de jQuery UI-->
-        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pixellisation Canvas</title>
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous">
+    </script>
+    <!--Chargement de jQuery UI-->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
-        <script src="classes/Canvas.class.js"></script>
-        <script src="classes/PixelizedCanvas.class.js"></script>
-        <script src="js/jcanvas.min.js"></script>
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
-        <div class="center">
-            <h1>Pixellisation</h1>
-            <img id="sourceImage" src="img/la-joconde_petite.jpg" class="hidden" alt="La Joconde">
-            <canvas id="canvas">
-                Votre navigateur n'est pas assez récent pour afficher le canvas
-            </canvas>
-            <div id="pixelizedContainer">
-                <p id="titreCanvasPixelized">Taille du carré de pixellisation</p>
-                <div id="slider" class="center">
-                    <div id="custom-handle" class="ui-slider-handle"></div>
-                </div>
-                <canvas id="pixelizedCanvas">
-                    Votre navigateur n'est pas assez récent pour afficher le canvas
-                </canvas>
-            </div>
+    <script src="classes/Canvas.class.js"></script>
+    <script src="classes/PixelizedCanvas.class.js"></script>
+    <!--jCanvas est un plugin jQuery qui rend le canevas HTML5 facile à utiliser-->
+    <script src="js/jcanvas.min.js"></script>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="center">
+    <h1>Pixellisation</h1>
+    <img id="sourceImage" src="img/la-joconde_petite.jpg" class="hidden" alt="Image à pixelliser">
+    <canvas id="canvas">
+        Votre navigateur n'est pas assez récent pour afficher le canvas
+    </canvas>
+    <div id="pixelizedContainer">
+        <p id="titreCanvasPixelized">Taille du carré de pixellisation</p>
+        <div id="slider" class="center">
+            <div id="custom-handle" class="ui-slider-handle"></div>
         </div>
-        <script src="js/script.js"></script>
-    </body>
+        <canvas id="pixelizedCanvas">
+            Votre navigateur n'est pas assez récent pour afficher le canvas
+        </canvas>
+    </div>
+</div>
+<script src="js/script.js"></script>
+</body>
 </html>

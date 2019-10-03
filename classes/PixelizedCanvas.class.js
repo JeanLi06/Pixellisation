@@ -3,10 +3,9 @@
 var PixelizedCanvas = function (canvas) {
     // Composition de la classe Canvas
     this.canvas = canvas;
-    this.context = this.canvas.context;
+    // this.context = this.canvas.context;
     this.canvasResult = document.getElementById('pixelizedCanvas');
     this.pixelizedContext = this.canvasResult.getContext('2d');
-
     this.drawPixelizedCanvas();
     this.sliderPixel();
 };
@@ -16,8 +15,8 @@ PixelizedCanvas.prototype.drawSquare = function (xCoord, yCoord, color) {
     $(this.canvasResult).drawRect({
         fillStyle: color,
         x: xCoord, y: yCoord,
-        width: pixelsize,
-        height: pixelsize,
+        width: pixelSize,
+        height: pixelSize,
         fromCenter: false
     });
 };
@@ -41,8 +40,8 @@ PixelizedCanvas.prototype.convertRgbToHex = function (r, g, b) {
 PixelizedCanvas.prototype.drawPixelizedCanvas = function () {
     //on balaye tout le canvas, avec un pas de largeur pixelsize
     var colorObject, color;
-    for (var x = 0; x < Math.round(this.canvas.getCanvasWidth() / pixelsize) * pixelsize; x += pixelsize) {
-        for (var y = 0; y < Math.round(this.canvas.getCanvasHeight() / pixelsize) * pixelsize; y += pixelsize) {
+    for (var x = 0; x < Math.round(this.canvas.getCanvasWidth() / pixelSize) * pixelSize; x += pixelSize) {
+        for (var y = 0; y < Math.round(this.canvas.getCanvasHeight() / pixelSize) * pixelSize; y += pixelSize) {
             // this.square = this.drawSquare(x, y, pixelsize, this.meanColorOfSquare(x, y));
             colorObject = (this.canvas.getPixelData(x, y, 1, 1));
             color = this.convertRgbToHex(colorObject.data[0], colorObject.data[1], colorObject.data[2]);
@@ -58,18 +57,18 @@ PixelizedCanvas.prototype.sliderPixel = function () {
         step: 2,
         min: 4,
         max: 42,
-        // change: redrawPixelizedCanvas,
+        // à la création du slider, on affiche la valeur dans le bouton
         create: function () {
             handle.text($(this).slider("value"));
         },
         // Si changement, on change les valeurs et on redessine
         slide: function (event, ui) {
             handle.text(ui.value);
-            pixelsize = ui.value;
+            pixelSize = ui.value;
             this.drawPixelizedCanvas();
         }.bind(this),
         stop: function (event, ui) {
-            pixelsize = ui.value;
+            pixelSize = ui.value;
         }
     });
 };

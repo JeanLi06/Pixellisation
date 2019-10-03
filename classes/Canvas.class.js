@@ -3,23 +3,17 @@
 //Le canvas qui contient l'image que l'on va pixeliser
 var Canvas = function () {
     this.image = new Image();
-    this.image.src = 'img/la-joconde_petite.jpg';
-
+    this.image.src = $('#sourceImage').attr('src');
     this.canvas = document.getElementById('canvas');
     this.context = this.canvas.getContext('2d');
-
-    //régle la taille des canvas selon l'image
+    //réglage la taille des canvas selon l'image
     this.setCanvasWidth(this.image.width);
     this.setCanvasHeight(this.image.height);
-
     this.drawTheImage();
-
-    //on affiche les canvas
-    $("h1>div").toggle();
 };
 
 //affiche l'image dans le canvas
-Canvas.prototype.drawTheImage = function() {
+Canvas.prototype.drawTheImage = function () {
     this.context.drawImage(this.image, 0, 0);
 };
 
@@ -32,8 +26,8 @@ Canvas.prototype.setCanvasWidth = function (width) {
 
 //détermine la hauteur de canvas en fonction de l'image
 Canvas.prototype.setCanvasHeight = function (height) {
-    $('#canvas').attr('height',  height);
-    $('#pixelizedCanvas').attr('height',  height);
+    $('#canvas').attr('height', height);
+    $('#pixelizedCanvas').attr('height', height);
     this.canvas.height = height;
 };
 

@@ -17,74 +17,47 @@ html {
     display: none;
 }
 
+.center {
+    text-align: center;
+    margin: 0 auto;
+}
+
 #slider {
     width: 350px;
     margin-bottom: 10px;
 }
 
 h1 {
-    -ms-flex-preferred-size: 100%;
-    flex-basis: 100%;
     text-align: center;
+    font-size: x-large;
     color: #85741E;
 }
 
 #titreCanvasPixelized {
-    margin: 0 auto;
+    font-size: 1.8em;
+    margin: 2em auto 0.5em;
     text-align: center;
     color: #85741E;
-}
-
-.flexbox {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-flow: row wrap;
-    flex-flow: row wrap;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
-    -webkit-box-align: end;
-    -ms-flex-align: end;
-    align-items: flex-end;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    width: 1200px;
 }
 
 #custom-handle {
     background: gold;
     border: 2px #85741E solid;
-    width: 2em;
-    height: 1.2em;
-    font-size: 0.8em;
+    width: 2.5em;
+    height: 1.6em;
+    font-size: 1.4em;
     top: 50%;
-    margin-top: -0.5em;
+    margin-top: -0.7em;
     padding-bottom: 1.1em;
     text-align: center;
-    line-height: 1em;
+    line-height: 1.4em;
 }
 
 #canvas {
     border: 10px gold ridge;
 }
 
-@media screen and (max-width: 800px) {
-    .flexbox {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-    }
-
+@media screen and (max-width: 768px) {
     #titreCanvasPixelized {
         margin-top: 15px;
     }
