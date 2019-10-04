@@ -1,10 +1,8 @@
 "use strict";
 
-var PixelizedCanvas = function (canvas) {
-    // Composition de la classe Canvas
+var PixelizedCanvas = function (canvas) { // Composition de la classe Canvas
     this.canvas = canvas;
-    // this.context = this.canvas.context;
-    this.canvasResult = document.getElementById('pixelizedCanvas');
+    this.canvasResult = document.getElementById('pixelized-canvas');
     this.pixelizedContext = this.canvasResult.getContext('2d');
     this.drawPixelizedCanvas();
     this.sliderPixel();
@@ -42,7 +40,6 @@ PixelizedCanvas.prototype.drawPixelizedCanvas = function () {
     var colorObject, color;
     for (var x = 0; x < Math.round(this.canvas.getCanvasWidth() / pixelSize) * pixelSize; x += pixelSize) {
         for (var y = 0; y < Math.round(this.canvas.getCanvasHeight() / pixelSize) * pixelSize; y += pixelSize) {
-            // this.square = this.drawSquare(x, y, pixelsize, this.meanColorOfSquare(x, y));
             colorObject = (this.canvas.getPixelData(x, y, 1, 1));
             color = this.convertRgbToHex(colorObject.data[0], colorObject.data[1], colorObject.data[2]);
             this.drawSquare(x, y, color);
@@ -52,7 +49,7 @@ PixelizedCanvas.prototype.drawPixelizedCanvas = function () {
 
 //installe le slider jQuery UI
 PixelizedCanvas.prototype.sliderPixel = function () {
-    var handle = $("#custom-handle");
+    var handle = $("#slider-knob");
     $("#slider").slider({
         step: 2,
         min: 4,

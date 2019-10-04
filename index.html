@@ -17,7 +17,8 @@
     <!--jCanvas est un plugin jQuery qui rend le canevas HTML5 facile à utiliser-->
     <script src="js/jcanvas.min.js"></script>
     <!--jQuery UI Touch Punch est un petit hack qui permet d'utiliser des événements tactiles sur des sites utilisant la bibliothèque d'interface utilisateur de jQuery UI -->
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript"
+            src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
     <script src="classes/Canvas.class.js"></script>
     <script src="classes/PixelizedCanvas.class.js"></script>
     <link rel="stylesheet" href="css/normalize.css">
@@ -26,16 +27,16 @@
 <body>
 <div class="center">
     <h1>Pixellisation</h1>
-    <img id="sourceImage" src="img/la-joconde_petite.jpg" class="hidden" alt="Image à pixelliser">
+    <img id="source-image" src="img/la-joconde.jpg" class="hidden" alt="Image à pixelliser">
     <canvas id="canvas">
         Votre navigateur n'est pas assez récent pour afficher le canvas
     </canvas>
     <div id="pixelizedContainer">
-        <p id="titreCanvasPixelized">Taille du carré de pixellisation</p>
+        <p id="title-canvas-pixelized">Taille du carré de pixellisation</p>
         <div id="slider" class="center">
-            <div id="custom-handle" class="ui-slider-handle"></div>
+            <div id="slider-knob" class="ui-slider-handle"></div>
         </div>
-        <canvas id="pixelizedCanvas">
+        <canvas id="pixelized-canvas">
             Votre navigateur n'est pas assez récent pour afficher le canvas
         </canvas>
     </div>

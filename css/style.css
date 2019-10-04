@@ -33,14 +33,14 @@ h1 {
     color: #85741E;
 }
 
-#titreCanvasPixelized {
+#title-canvas-pixelized {
     font-size: 1.8em;
     margin: 2em auto 0.5em;
     text-align: center;
     color: #85741E;
 }
 
-#custom-handle {
+#slider-knob {
     background: gold;
     border: 2px #85741E solid;
     width: 2.5em;
@@ -58,7 +58,7 @@ h1 {
 }
 
 @media screen and (max-width: 768px) {
-    #titreCanvasPixelized {
+    #title-canvas-pixelized {
         margin-top: 15px;
     }
 }
