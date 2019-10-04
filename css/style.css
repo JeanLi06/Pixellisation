@@ -34,23 +34,24 @@ h1 {
 }
 
 #title-canvas-pixelized {
-    font-size: 1.8em;
-    margin: 2em auto 0.5em;
+    font-size: 1.8rem;
+    margin: 2rem auto 0.5em;
     text-align: center;
     color: #85741E;
+}
+
+h2 span {
+    font-style: italic;
 }
 
 #slider-knob {
     background: gold;
     border: 2px #85741E solid;
-    width: 2.5em;
-    height: 1.6em;
-    font-size: 1.4em;
-    top: 50%;
-    margin-top: -0.7em;
-    padding-bottom: 1.1em;
-    text-align: center;
-    line-height: 1.4em;
+    width: 3.5rem;
+    height: 2.5rem;
+    font-size: 2rem;
+    top: -100%;
+    line-height: 2rem;
 }
 
 #canvas {

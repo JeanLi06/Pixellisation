@@ -2,10 +2,9 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Pixellisation Canvas</title>
+    <title>Pixellisation en Javascript avec le canvas</title>
     <script
             src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -17,8 +16,7 @@
     <!--jCanvas est un plugin jQuery qui rend le canevas HTML5 facile à utiliser-->
     <script src="js/jcanvas.min.js"></script>
     <!--jQuery UI Touch Punch est un petit hack qui permet d'utiliser des événements tactiles sur des sites utilisant la bibliothèque d'interface utilisateur de jQuery UI -->
-    <script type="text/javascript"
-            src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
     <script src="classes/Canvas.class.js"></script>
     <script src="classes/PixelizedCanvas.class.js"></script>
     <link rel="stylesheet" href="css/normalize.css">
@@ -26,21 +24,31 @@
 </head>
 <body>
 <div class="center">
-    <h1>Pixellisation</h1>
+    <h1>Pixellisation en JS</h1>
+    <!-- L'image est cachée, et sera chargée dans le canvas-->
     <img id="source-image" src="img/la-joconde.jpg" class="hidden" alt="Image à pixelliser">
+    <h2>Image d'origine</h2>
     <canvas id="canvas">
         Votre navigateur n'est pas assez récent pour afficher le canvas
     </canvas>
-    <div id="pixelizedContainer">
-        <p id="title-canvas-pixelized">Taille du carré de pixellisation</p>
+    <div id="pixelized-container">
+        <h2 id="title-canvas-pixelized">Taille du pixel <span>(Faire glisser)</span></h2>
         <div id="slider" class="center">
             <div id="slider-knob" class="ui-slider-handle"></div>
         </div>
+        <h2>Image pixélisée</h2>
         <canvas id="pixelized-canvas">
             Votre navigateur n'est pas assez récent pour afficher le canvas
         </canvas>
     </div>
 </div>
+<p>
+    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px"
+             src="//jigsaw.w3.org/css-validator/images/vcss"
+             alt="CSS Valide !"/>
+    </a>
+</p>
 <script src="js/script.js"></script>
 </body>
 </html>

@@ -1,4 +1,5 @@
 "use strict";
+//Le canvas avec l'image pixellisée
 
 var PixelizedCanvas = function (canvas) { // Composition de la classe Canvas
     this.canvas = canvas;
@@ -8,7 +9,7 @@ var PixelizedCanvas = function (canvas) { // Composition de la classe Canvas
     this.sliderPixel();
 };
 
-//dessine aux coordonnées x,y un carré de taille pixelsize (0 = coin supérieur gauche)
+// Dessine aux coordonnées x,y un carré de taille pixelsize (0 = coin supérieur gauche)
 PixelizedCanvas.prototype.drawSquare = function (xCoord, yCoord, color) {
     $(this.canvasResult).drawRect({
         fillStyle: color,
@@ -19,7 +20,7 @@ PixelizedCanvas.prototype.drawSquare = function (xCoord, yCoord, color) {
     });
 };
 
-//Conversion d'une couleur rgb en hexa
+// Conversion d'une couleur rgb en hexa
 PixelizedCanvas.prototype.convertRgbToHex = function (r, g, b) {
     this.rHex = r.toString(16);
     this.gHex = g.toString(16);
@@ -34,7 +35,7 @@ PixelizedCanvas.prototype.convertRgbToHex = function (r, g, b) {
     return '#' + this.rHex + this.gHex + this.bHex;
 };
 
-//Affiche le canvas pixelisé
+// Affiche le canvas pixelisé
 PixelizedCanvas.prototype.drawPixelizedCanvas = function () {
     //on balaye tout le canvas, avec un pas de largeur pixelsize
     var colorObject, color;
@@ -47,7 +48,7 @@ PixelizedCanvas.prototype.drawPixelizedCanvas = function () {
     }
 };
 
-//installe le slider jQuery UI
+// Gère le slider jQuery UI
 PixelizedCanvas.prototype.sliderPixel = function () {
     var handle = $("#slider-knob");
     $("#slider").slider({
@@ -68,5 +69,4 @@ PixelizedCanvas.prototype.sliderPixel = function () {
             pixelSize = ui.value;
         }
     })
-    ;
 };

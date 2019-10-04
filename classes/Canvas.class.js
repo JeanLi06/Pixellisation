@@ -2,9 +2,7 @@
 
 //Le canvas qui contient l'image que l'on va pixeliser
 var Canvas = function () {
-    // this.canvas = document.getElementById('canvas');
     this.canvas = document.getElementById('canvas');
-    // this.canvas = $('#canvas');
     this.image = new Image();
     this.image.src = $('#source-image').attr('src');
     this.ctx = this.canvas.getContext('2d');
@@ -13,7 +11,7 @@ var Canvas = function () {
     this.setCanvasHeight(this.image.height);
     var self = this;
     this.image.onload = function () {
-        self.ctx.drawImage(this.image, 0, 0);
+        self.ctx.drawImage(self.image, 0, 0);
     }.bind(self);
 };
 
